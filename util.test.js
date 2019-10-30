@@ -1,4 +1,4 @@
-const { generateText } = require('./util');
+const { generateText, checkAndGenerate } = require('./util');
 
 //unit tests
 test('should output age and name', () =>{
@@ -18,3 +18,9 @@ test('should output data-less text', () => {
     expect(text).toBe('undefined (undefined years old)');
 })
 
+//integration test
+
+test('should generate a valid text output', () =>{
+    const text = checkAndGenerate('Max', 29);
+    expect(text).toBe('Max (29 years old)');
+});
